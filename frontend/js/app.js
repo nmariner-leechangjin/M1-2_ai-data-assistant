@@ -1,4 +1,4 @@
-const base = window.API_BASE_URL || "http://localhost:8000";
+const base = window.API_BASE_URL || (["localhost", "127.0.0.1"].includes(window.location.hostname) ? "http://localhost:8000" : "https://m1-2-ai-data-assistant.onrender.com");
 let currentConversationId = null;
 const byId = (id) => document.getElementById(id);
 
