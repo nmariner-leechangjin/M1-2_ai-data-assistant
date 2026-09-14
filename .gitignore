@@ -3,3 +3,7 @@ __pycache__/
 *.py[cod]
 .env
 service-account*.json
+
+apikey.txt
+*-firebase-adminsdk-*.json
+.tmp/

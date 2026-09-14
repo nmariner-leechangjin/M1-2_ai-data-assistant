@@ -17,7 +17,11 @@ else:
     repository = FirestoreRepository(settings.firebase_service_account_json)
 data_service = DataService(repository)
 conversation_service = ConversationService(repository)
-chat_client = None if settings.use_mock_services else OpenAIChatClient(settings.openai_api_key, settings.openai_model)
+chat_client = None if settings.use_mock_services else OpenAIChatClient(
+    settings.openai_api_key,
+    settings.openai_model,
+    settings.openai_base_url,
+)
 chat_service = ChatService(data_service, conversation_service, chat_client, settings.use_mock_services)
 app = FastAPI(title="AI Data Assistant")
 app.add_middleware(CORSMiddleware, allow_origins=settings.allowed_origins, allow_methods=["*"], allow_headers=["*"])

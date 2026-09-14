@@ -40,8 +40,33 @@ async function openConversation(id) {
 }
 byId("data").onsubmit = async (event) => {
   event.preventDefault();
-  try { await api("/api/data", { method: "POST", body: JSON.stringify(Object.fromEntries(new FormData(event.target))) }); event.target.reset(); await load(); }
-  catch (error) { byId("summary").textContent = error.message; }
+
+  const form = event.target;
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  if (submitButton?.disabled) return;
+
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.textContent = "저장 중…";
+  }
+
+  try {
+    await api("/api/data", {
+      method: "POST",
+      body: JSON.stringify(Object.fromEntries(new FormData(form))),
+    });
+
+    form.reset();
+    await load();
+  } catch (error) {
+    byId("summary").textContent = error.message;
+  } finally {
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = "데이터 추가";
+    }
+  }
 };
 byId("chat").onsubmit = async (event) => {
   event.preventDefault(); const input = byId("question"), send = byId("send"), question = input.value.trim(); if (!question) return;
