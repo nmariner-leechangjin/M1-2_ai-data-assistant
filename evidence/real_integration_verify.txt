@@ -1,0 +1,20 @@
+AI Data Assistant - REAL INTEGRATION VERIFY
+Evidence summary recorded: 2026-10-08 Asia/Seoul
+
+This file summarizes the completed real-integration verification. External Firestore/OpenAI calls were not repeated while preparing this evidence.
+
+VERIFIED - Backend ran in production mode
+VERIFIED - Firestore authentication and real collection access
+VERIFIED - POST /api/data returned 201
+VERIFIED - GET /api/data returned the created test document
+VERIFIED - PUT /api/data/{id} persisted the changed value
+VERIFIED - DELETE /api/data/{id} removed the test document
+VERIFIED - REAL_INTEGRATION_TEST cleanup marker count was 0 after cleanup
+VERIFIED - POST /api/chat returned 200 from the Codyssey OpenAI-compatible API
+VERIFIED - Chat response contained summary_used=true
+VERIFIED - Firestore summary was injected into the AI context
+VERIFIED - User and assistant messages were automatically saved
+VERIFIED - Conversation list and detail retrieval
+VERIFIED - Integration test data cleanup
+
+No document ID, API key, Firebase credential, or secret value is included.

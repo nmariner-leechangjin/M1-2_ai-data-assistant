@@ -111,6 +111,21 @@
 
 로컬 기능, Mock 회귀 테스트, 실제 연동 및 HUMAN VERIFY, 문서와 Secret 제외 상태가 확인되었다.
 
+## H-1. 사전평가 FAIL 최소 보완
+
+- [ ] [HUMAN] [NOT_STARTED] #1 실제 Render/Vercel 배포 증거 — README 위치와 TBD 상태만 준비, 실제 배포 후 검증 필요
+- [x] [AUTO] [VERIFIED] #2 Swagger `/docs` 및 `/openapi.json` HTTP 200 증거와 path 목록 문서화
+- [x] [AUTO] [VERIFIED] #3 실제 Firestore CRUD 및 test marker cleanup 증거 문서화
+- [x] [AUTO] [VERIFIED] #5 Conversation CRUD, chat 자동 저장, HUMAN VERIFY 증거 문서화
+- [x] [AUTO] [VERIFIED] #7 Router/Service/Repository/Client 책임과 호출 흐름 문서화
+- [x] [AUTO] [VERIFIED] #12 Summary 로직 분리 이유와 최근 7개 window 정책 문서화
+- [x] [AUTO] [VERIFIED] #15 Render cold start 안내와 `/health` warm-up 후보 문서화
+- [x] [AUTO] [VERIFIED] #17 `textContent`, Pydantic 검증, 향후 sanitizer 정책 문서화
+- [x] [AUTO] [VERIFIED] Firestore index, validator, frontend 상태, context 장단점, conversation 저장 정책, 배포 환경변수와 CORS 권고 반영
+- [x] [AUTO] [VERIFIED] `evidence/pre_push_verify.txt`, `real_integration_verify.txt`, `human_verify.txt` 작성
+
+#1은 실제 Render/Vercel 배포와 production screenshot 없이는 완전 PASS로 처리하지 않는다.
+
 ## I. GitHub
 
 - [x] [HUMAN] [VERIFIED] 이번 변경의 commit/push 승인

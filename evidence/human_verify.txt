@@ -1,0 +1,15 @@
+AI Data Assistant - HUMAN VERIFY
+Evidence recorded: 2026-10-08 Asia/Seoul
+
+Verification method: User-operated local browser flow
+
+PASS - Page and CSS rendering
+PASS - Data summary display
+PASS - Add one data record
+PASS - Delete one data record
+PASS - One real AI response
+PASS - Conversation list display
+PASS - Load a saved conversation
+PASS - AI response period, count, average, minimum, maximum, and recent trend matched current Firestore data
+
+Browser automation evidence is not claimed. The user performed this verification directly.
