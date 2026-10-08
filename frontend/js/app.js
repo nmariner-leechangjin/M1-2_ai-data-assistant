@@ -1,5 +1,5 @@
 const LOCAL_API_BASE_URL = "http://localhost:8000";
-const PRODUCTION_API_BASE_URL = "https://m1-2-ai-data-assistant.onrender.com";
+const PRODUCTION_API_BASE_URL = "https://m1-2-ai-data-assistant-1.onrender.com";
 const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
 
 // Static frontend priority: runtime override, local backend, then the configured
