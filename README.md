@@ -306,28 +306,31 @@ HUMAN VERIFY에서도 대화 목록 표시와 특정 대화 불러오기를 모�
 | Local Frontend | `http://127.0.0.1:5500` | VERIFIED |
 | Local Backend | `http://127.0.0.1:8000` | VERIFIED |
 | Local Swagger | `http://127.0.0.1:8000/docs` | VERIFIED |
-| Render Backend | TBD | NOT VERIFIED |
-| Render Swagger | TBD | NOT VERIFIED |
-| Vercel Frontend | TBD | NOT VERIFIED |
+| Render Backend | `https://m1-2-ai-data-assistant-1.onrender.com` | VERIFIED |
+| Render Swagger | `https://m1-2-ai-data-assistant-1.onrender.com/docs` | VERIFIED |
+| Vercel Frontend | `https://m1-2ai-data-assistant-frontend.vercel.app` | VERIFIED |
 
-Render/Vercel의 실제 배포 상태와 URL은 POST_DEPLOY VERIFY에서 확인한 뒤 갱신합니다.
+위 URL은 2026-10-09 Asia/Seoul 기준 POST_DEPLOY VERIFY에서 확인했습니다.
 
 ## Deployment Evidence
 
-- Backend Production URL: `TBD` — NOT VERIFIED
-- Frontend Production URL: `TBD` — NOT VERIFIED
-- Production Swagger URL: `TBD` — NOT VERIFIED
-- Production `/health` screenshot: pending production deployment
-- Production user-flow screenshot: pending production deployment
+- Backend Production URL: `https://m1-2-ai-data-assistant-1.onrender.com` — VERIFIED
+- Frontend Production URL: `https://m1-2ai-data-assistant-frontend.vercel.app` — VERIFIED
+- Production Swagger URL: `https://m1-2-ai-data-assistant-1.onrender.com/docs` — VERIFIED
+- Production `/health`: HTTP 200, production mode — VERIFIED
+- Production Firestore summary: HTTP 200, 103 records — VERIFIED
+- Production Vercel → Render data/summary/conversation loading — VERIFIED
+- Production AI chat: HTTP 200, Firestore summary context used, verification conversation deleted — VERIFIED
+- Production frontend screenshot: `evidence/production-frontend-2026-10-09.png` — VERIFIED
 
-현재 확보된 것은 **로컬 production-mode Backend 실행 증거**와 **실제 Firestore/OpenAI 연동 증거**입니다. 이는 실제 Render/Vercel 배포 증거를 대체하지 않습니다. 배포 후 이 섹션에 실제 URL, 확인 일시, `/health`, Swagger, Frontend 사용자 흐름 캡처를 추가합니다.
+배포 환경의 Firebase 자격증명과 AI API 키를 정상 값으로 교체한 뒤 Render와 Vercel의 읽기 흐름 및 실제 AI 응답 생성을 재검증했습니다. Firebase 키는 보안 회전 후 기존 키를 폐기했으며, 폐기 후에도 summary와 AI chat을 다시 검증했습니다. 제출용 최종 스크린샷은 별도 최종 확인 항목입니다.
 
 ## 제출 스크린샷
 
-아래 이미지는 최종 배포 검증 후 추가합니다.
+실제 Vercel 프로덕션 화면은 `evidence/production-frontend-2026-10-09.png`에 저장했습니다.
 
 - [ ] 데이터 요약이 반영된 AI 채팅 질문·답변
 - [ ] 데이터 추가·삭제 동작
 - [ ] 이전 대화 목록과 대화 불러오기
 - [ ] Swagger UI
-- [ ] Render Backend 및 Vercel Frontend 실제 배포 URL
+- [x] Render Backend 및 Vercel Frontend 실제 배포 URL

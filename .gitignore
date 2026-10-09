@@ -7,5 +7,6 @@ service-account*.json
 
 apikey.txt
 *-firebase-adminsdk-*.json
+m1-2-ai-data-assistant-*.json
 .tmp/
 .browser_verify_profile/

@@ -19,7 +19,7 @@
 - [x] [AUTO] [VERIFIED] 실제 Codyssey OpenAI 호환 API 응답
 - [x] [AUTO] [VERIFIED] Firestore Summary의 AI Context Injection 및 대화 자동 저장
 - [x] [HUMAN] [VERIFIED] 로컬 Frontend ↔ Backend 전체 사용자 흐름
-- [ ] [AUTO] [NOT_STARTED] Render/Vercel POST_DEPLOY VERIFY
+- [x] [AUTO] [VERIFIED] Render/Vercel POST_DEPLOY VERIFY (읽기 흐름 및 실제 AI 응답)
 - [ ] [HUMAN] [NOT_STARTED] 제출 스크린샷 준비
 
 ## A. 요구사항과 구조
@@ -113,7 +113,7 @@
 
 ## H-1. 사전평가 FAIL 최소 보완
 
-- [ ] [HUMAN] [NOT_STARTED] #1 실제 Render/Vercel 배포 증거 — README 위치와 TBD 상태만 준비, 실제 배포 후 검증 필요
+- [x] [AUTO] [VERIFIED] #1 실제 Render/Vercel 배포 URL과 Backend/Frontend 읽기 흐름
 - [x] [AUTO] [VERIFIED] #2 Swagger `/docs` 및 `/openapi.json` HTTP 200 증거와 path 목록 문서화
 - [x] [AUTO] [VERIFIED] #3 실제 Firestore CRUD 및 test marker cleanup 증거 문서화
 - [x] [AUTO] [VERIFIED] #5 Conversation CRUD, chat 자동 저장, HUMAN VERIFY 증거 문서화
@@ -136,13 +136,13 @@
 
 ## J. POST_DEPLOY VERIFY
 
-- [ ] [HUMAN] [NOT_STARTED] Render/Vercel 신규 배포 승인
-- [ ] [AUTO] [NOT_STARTED] Render Backend URL과 `/docs`
-- [ ] [AUTO] [NOT_STARTED] Vercel Frontend URL
-- [ ] [AUTO] [NOT_STARTED] Vercel Frontend ↔ Render Backend 연결
-- [ ] [AUTO] [NOT_STARTED] 배포 환경의 Firestore와 실제 AI 응답
+- [x] [HUMAN] [VERIFIED] Render/Vercel 신규 배포 승인
+- [x] [AUTO] [VERIFIED] Render Backend URL과 `/docs`
+- [x] [AUTO] [VERIFIED] Vercel Frontend URL
+- [x] [AUTO] [VERIFIED] Vercel Frontend ↔ Render Backend 연결
+- [x] [AUTO] [VERIFIED] 배포 환경의 Firestore 읽기 및 실제 AI 응답
 - [ ] [HUMAN] [NOT_STARTED] production 사용자 흐름
-- [ ] [AUTO] [NOT_STARTED] README 실제 배포 URL 반영
+- [x] [AUTO] [VERIFIED] README 실제 배포 URL 반영
 - [ ] [HUMAN] [NOT_STARTED] 제출 스크린샷과 최종 제출 적합성
 
 Render/Vercel 관련 항목은 실제 배포 상태를 확인하기 전까지 VERIFIED로 처리하지 않는다.

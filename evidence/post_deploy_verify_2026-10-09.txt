@@ -1,0 +1,37 @@
+AI Data Assistant - POST DEPLOY VERIFY
+Verified: 2026-10-09 Asia/Seoul
+
+ROOT CAUSE
+- Render Firestore requests failed with Invalid JWT Signature.
+- The Firebase service-account value stored in Render did not match the locally verified credential.
+- Render AI requests failed with HTTP 401 because OPENAI_API_KEY did not contain the valid key value.
+
+FIX
+- Replaced only FIREBASE_SERVICE_ACCOUNT_JSON in Render.
+- Replaced only OPENAI_API_KEY in Render with the validated key line.
+- Render rebuilt and redeployed the existing commit.
+- No application feature code was changed.
+
+VERIFIED
+- Render /health: HTTP 200, production mode
+- Render /openapi.json: HTTP 200
+- Render /api/data/summary: HTTP 200, 103 records
+- Render /api/data: HTTP 200
+- Render /api/conversations: HTTP 200
+- CORS preflight from the production Vercel origin: HTTP 200
+- Vercel production page: HTTP 200
+- Vercel UI displayed summary, 103 data rows, and conversation history from Render
+- Render /api/chat: HTTP 200, summary_used=true, answer present
+- Verification conversation cleanup: HTTP 200
+- Firebase service-account key rotated after diagnostic exposure
+- New key deployed and verified before the previous key was revoked
+- Post-revocation summary: HTTP 200, 103 records
+- Post-revocation AI chat: HTTP 200, summary_used=true
+- Revoked local credential JSON and Cloud Shell temporary key file removed
+- Production frontend screenshot saved as evidence/production-frontend-2026-10-09.png
+- Local regression suite: 5 passed
+
+PENDING
+- Submission screenshots and human suitability review
+
+No API key, private key, credential JSON, or document ID is included in this evidence file.
