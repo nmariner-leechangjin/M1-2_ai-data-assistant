@@ -313,9 +313,9 @@ HUMAN VERIFY에서도 대화 목록 표시와 특정 대화 불러오기를 모�
 | 구분 | URL | 상태 |
 | --- | --- | --- |
 | Local Frontend | `http://127.0.0.1:5500` (로컬 서버 실행 필요) | VERIFIED |
-| Local Backend | `http://127.0.0.1:8000` (로컬 서버 실행 필요) | VERIFIED |
+| Local Backend Health | `http://127.0.0.1:8000/health` (로컬 서버 실행 필요) | VERIFIED |
 | Local Swagger | `http://127.0.0.1:8000/docs` (로컬 서버 실행 필요) | VERIFIED |
-| Render Backend | [열기](https://m1-2-ai-data-assistant-1.onrender.com) | VERIFIED |
+| Render Backend Health | [열기](https://m1-2-ai-data-assistant-1.onrender.com/health) | VERIFIED |
 | Render Swagger | [열기](https://m1-2-ai-data-assistant-1.onrender.com/docs) | VERIFIED |
 | Vercel Frontend | [실행하기](https://m1-2ai-data-assistant-frontend.vercel.app) | VERIFIED |
 
@@ -323,7 +323,7 @@ HUMAN VERIFY에서도 대화 목록 표시와 특정 대화 불러오기를 모�
 
 ## Deployment Evidence
 
-- Backend Production URL: `https://m1-2-ai-data-assistant-1.onrender.com` — VERIFIED
+- Backend Production URL: `https://m1-2-ai-data-assistant-1.onrender.com` (`/health` HTTP 200으로 가동 확인) — VERIFIED
 - Frontend Production URL: `https://m1-2ai-data-assistant-frontend.vercel.app` — VERIFIED
 - Production Swagger URL: `https://m1-2-ai-data-assistant-1.onrender.com/docs` — VERIFIED
 - Production `/health`: HTTP 200, production mode — VERIFIED
