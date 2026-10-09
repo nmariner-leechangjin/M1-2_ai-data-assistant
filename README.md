@@ -134,6 +134,15 @@ HUMAN VERIFY에서는 실제 AI 답변에 표시된 기간, 개수, 평균, 최�
 
 새 chat 요청은 먼저 conversation을 준비하고, AI 응답이 성공한 뒤 user/assistant 메시지 2건을 함께 저장합니다. 현재 자동 재시도는 없으며, AI 호출이 실패하면 메시지는 저장되지 않지만 새로 만든 빈 conversation이 남을 수 있습니다. 재시도·부분 저장·빈 대화 정리는 향후 오류 정책으로 명시적으로 결정해야 합니다.
 
+## 바로 실행
+
+설치 없이 사용하려면 아래 프로덕션 링크를 엽니다.
+
+- [AI Data Assistant 실행](https://m1-2ai-data-assistant-frontend.vercel.app)
+- [Backend Swagger 열기](https://m1-2-ai-data-assistant-1.onrender.com/docs)
+
+아래 `127.0.0.1` 주소는 로컬 개발용이며, 해당 컴퓨터에서 Backend와 Frontend 서버를 먼저 실행해야만 열립니다.
+
 ## 로컬 실행 방법
 
 ### 1. 가상환경과 의존성
@@ -177,7 +186,7 @@ cd frontend
 python -m http.server 5500 --bind 127.0.0.1
 ```
 
-브라우저에서 `http://127.0.0.1:5500`으로 접속합니다.
+위 명령을 실행한 터미널을 종료하지 않은 상태에서 브라우저로 `http://127.0.0.1:5500`에 접속합니다. 서버를 실행하지 않았다면 이 주소는 열리지 않습니다. 설치 없이 확인하려면 위의 [AI Data Assistant 실행](https://m1-2ai-data-assistant-frontend.vercel.app) 링크를 사용합니다.
 
 ### Frontend 상태 흐름
 
@@ -303,12 +312,12 @@ HUMAN VERIFY에서도 대화 목록 표시와 특정 대화 불러오기를 모�
 
 | 구분 | URL | 상태 |
 | --- | --- | --- |
-| Local Frontend | `http://127.0.0.1:5500` | VERIFIED |
-| Local Backend | `http://127.0.0.1:8000` | VERIFIED |
-| Local Swagger | `http://127.0.0.1:8000/docs` | VERIFIED |
-| Render Backend | `https://m1-2-ai-data-assistant-1.onrender.com` | VERIFIED |
-| Render Swagger | `https://m1-2-ai-data-assistant-1.onrender.com/docs` | VERIFIED |
-| Vercel Frontend | `https://m1-2ai-data-assistant-frontend.vercel.app` | VERIFIED |
+| Local Frontend | `http://127.0.0.1:5500` (로컬 서버 실행 필요) | VERIFIED |
+| Local Backend | `http://127.0.0.1:8000` (로컬 서버 실행 필요) | VERIFIED |
+| Local Swagger | `http://127.0.0.1:8000/docs` (로컬 서버 실행 필요) | VERIFIED |
+| Render Backend | [열기](https://m1-2-ai-data-assistant-1.onrender.com) | VERIFIED |
+| Render Swagger | [열기](https://m1-2-ai-data-assistant-1.onrender.com/docs) | VERIFIED |
+| Vercel Frontend | [실행하기](https://m1-2ai-data-assistant-frontend.vercel.app) | VERIFIED |
 
 위 URL은 2026-10-09 Asia/Seoul 기준 POST_DEPLOY VERIFY에서 확인했습니다.
 
